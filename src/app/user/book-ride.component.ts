@@ -36,10 +36,12 @@ export class BookRideComponent implements OnInit {
         this.userService.bookRideOfUser(pickUpAt,dropAt).subscribe((data) => {
             console.log("success");
             console.log(data);
+            this.distance=data;
             
             if (data != null) {
                 alert("Done");
                 this.distance=data;
+               // console.log(this.distance)
                 console.log(this.distance.finalDistance)
                 this.router.navigate(['/user/rideNow']);
             }

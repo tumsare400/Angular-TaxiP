@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Distance } from './distance';
 import { BookRideComponent } from './book-ride.component';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class RideNowComponent implements OnInit {
 
     ngOnInit() {
         this.distance.finalDistance = BookRideComponent.prototype.getDistance();
+    
         console.log(this.distance.finalDistance)
 
     }

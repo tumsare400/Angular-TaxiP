@@ -24,6 +24,7 @@ export class SignInComponent{
         let email = (<HTMLInputElement>document.getElementById("email")).value;
         
         this.userService.signInDetailsOfUser(email,password).subscribe((data) => {
+            console.log(this.user.email);
             alert("Login Successful");
             console.log(data);
             if (data != null) {
@@ -31,9 +32,6 @@ export class SignInComponent{
                 this.router.navigate(['/user/bookRide']);
 
             }
-          
-               
-            
         });
       
 

@@ -301,15 +301,17 @@
                         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                         [(ngModel)]="driver.password" name="password" #password="ngModel"
                         [class.is-invalid]="password.touched && password.invalid" required />
-                        <div *ngIf="password.errors && password.touched">
-                                <div class="text-danger" *ngIf="password.errors?.required">Password is must</div>
-                                <div class="text-danger" *ngIf="password.errors?.pattern">Password should contain atleast one capital letter, number
-                                    digits and must contain at least 8 characters</div>
-                            </div>
+                    <div *ngIf="password.errors && password.touched">
+                        <div class="text-danger" *ngIf="password.errors?.required">Password is must</div>
+                        <div class="text-danger" *ngIf="password.errors?.pattern">Password should contain atleast one
+                            capital letter, number
+                            digits and must contain at least 8 characters</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-lg btn-success" style="margin-left:500px" [disabled]="accountForm.form.invalid">Register</button>
+        <button type="submit" class="btn btn-lg btn-success" style="margin-left:500px"
+            [disabled]="accountForm.form.invalid">Register</button>
         <h6 class="text-center">
             <br>
             <a routerLink="/driver/login" class="text-light">Already have an Account?Sign In</a>

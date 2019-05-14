@@ -22,12 +22,10 @@ export class BookRideComponent implements OnInit {
         this.distance = new Distance();
     }
 
-    getDistance(){
-        return this.distance.finalDistance;
-    }
+    
 
     bookRideOfUser() {
-        alert("Registration successfull");
+        
         console.log(this.bookRide);
 
         let pickUpAt = (<HTMLInputElement>document.getElementById("pickUpAt")).value;
@@ -36,7 +34,7 @@ export class BookRideComponent implements OnInit {
         this.userService.bookRideOfUser(pickUpAt,dropAt).subscribe((data) => {
             console.log("success");
             console.log(data);
-            this.distance=data;
+            this.distance.finalDistance=data.finalDistance;
             
             if (data != null) {
                 alert("Done");
@@ -47,9 +45,13 @@ export class BookRideComponent implements OnInit {
             }
         });
 
-
+    
 
     }
+    getDistance(){
+        return this.distance.finalDistance;
+    }
+
 
 }
 

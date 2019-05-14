@@ -28,4 +28,8 @@ export class UserService{
         return this.http.get<Distance>(this.baseUrl+"/bookride/"+pickUpAt+"/"+dropAt);
       }
 
+      ridwNowDistance(){
+        return  this.http.get<Distance>(this.baseUrl+"/getdistance");
+      }
+      
 }
